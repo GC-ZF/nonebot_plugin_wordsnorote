@@ -1,0 +1,2 @@
+include nonebot_plugin_wordsnorote/*
+prune local_test
