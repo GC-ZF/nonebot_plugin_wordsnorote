@@ -5,7 +5,7 @@ with open ( "README.md", "r", encoding="utf-8", errors="ignore" ) as fh:
 
 setup (
     name='nonebot_plugin_wordsnorote',  # 这里是pip项目发布的名称
-    version='0.0.1',  # 版本号，数值大的会优先被pip
+    version='0.0.2',  # 版本号，数值大的会优先被pip
     keywords=[ "pip", "nonebot2", "nonebot", "English", "nonebot_plugin" ],
     description="a nonebot plugin to remember words",
     long_description=long_description,
@@ -37,3 +37,6 @@ setup (
         'nonebot-adapter-onebot',
     ]
 )
+# python setup.py bdist_wheel # 打包为whl文件
+# python setup.py sdist # 打包为tar.gz文件
+# twine upload -u zhangshier -p dist/*

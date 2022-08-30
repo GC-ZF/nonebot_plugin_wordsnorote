@@ -14,7 +14,7 @@ __plugin_meta__ = nonebot.plugin.PluginMetadata (
     usage='''发送 不背单词 开始背单词吧！''',
     extra={
         'author': '张时贰 qq:1310446718',
-        'version': '0.0.1'}
+        'version': '0.0.2'}
 )
 
 # 默认一天20个单词，可在evn文件中配置
@@ -67,6 +67,7 @@ async def words(bot: Bot, event: MessageEvent, state: T_State):
         # 合并转发不支持语音消息，故采用链接形式
         msg_list.append ( '音标:' + i[ '英标' ] + '\n' + '发音:' + i[ '读音' ] )
         msg_list.append ( Message ( i[ '例句1' ] + '\n' + i[ '例句1翻译' ] ) )
+
     msgs = [ ]
     for msg in msg_list:
         msgs.append ( {
@@ -77,5 +78,17 @@ async def words(bot: Bot, event: MessageEvent, state: T_State):
                 'content': msg
             }
         } )
+
     await get_words.send ( Message ( "整理单词中" ) )
-    await bot.call_api ( 'send_group_forward_msg', group_id=event.group_id, messages=msgs )
+
+    '''
+        合并转发上限100条，25个单词是100条消息，当num_words>25，直接调用api会报错
+        await bot.call_api ( 'send_group_forward_msg', group_id=event.group_id, messages=msg )
+        解决：拆分msgs放到 msgs_split[ [ 100条... ], [ 100条... ] ]
+    '''
+    msgs_split = [ ]
+    for i in range ( 0, len ( msgs ), 100 ):
+        msgs_split.append ( msgs[ i:i + 100 ] )
+
+    for i in msgs_split:
+        await bot.call_api ( 'send_group_forward_msg', group_id=event.group_id, messages=i )
