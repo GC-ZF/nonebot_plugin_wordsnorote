@@ -70,6 +70,7 @@ nonebot.load_plugin("nonebot_plugin_wordsnorote")
   <img height="300px" src="https://testingcf.jsdelivr.net/gh/GC-ZF/nonebot_plugin_wordsnorote/img/example2.png">
   <img height="300px" src="https://testingcf.jsdelivr.net/gh/GC-ZF/nonebot_plugin_wordsnorote/img/example3.png">
 </div>
+
 ## 更新记录
 
 2022.8.29，开始本地构建（local_test文件夹）。编写词库转格式与修复。实现插件化：修改所有文件读写路径，增加自定义单词数量、自定义词库功能
