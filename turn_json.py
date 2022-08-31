@@ -4,7 +4,7 @@
 import json
 
 youdao_book = 'YouDao.json'  # 有道源文件
-turn_book = 'wordbook.json.json'  # 转化格式保存至wordbook.json
+turn_book = 'wordbook.json'  # 转化格式保存至wordbook.json
 
 # 格式转换(win如果提示编码错误或音标ukphone乱码，用linux转)
 with open ( youdao_book, 'r' ) as f1, open ( turn_book, 'a+' ) as f2:

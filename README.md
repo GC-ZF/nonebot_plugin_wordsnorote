@@ -58,11 +58,16 @@ nonebot.load_plugin("nonebot_plugin_wordsnorote")
 
 ## 更换词库
 
-因为我面向的是大学生，所以默认词库是考研英语，[kajweb/dict](https://github.com/kajweb/dict)仓库已将有道数据整理，包括小学到大学的课本、四六级、考研、雅思...
+因为我面向的是大学生，所以默认词库是考研英语，[kajweb/dict](https://github.com/kajweb/dict)仓库已将有道数据整理，包括小学到大学的课本、四六级、考研、雅思...，81本书，小张不可能做到本本都兼容，所以写了一些转格式代码，方便大家换书
 
 1. 从仓库中下载词库
 2. 运行仓库中`turn_json.py`转格式（注意英标是否乱码，推荐在Mac或Linux环境下运行，微软编码默认GBK）并遍历一遍数据，查看是否有缺失
 3. 运行仓库中`fix_keys.py`填补缺失数据（以考研词库缺失例句与发音为例，根据实际情况修改`try...expect`异常）
+3. 将词库重命名并放在`data/wordsnorote/wordbook.json`
+
+如果转格式失败，你也可以通过**issue**留下词库的 **名字\id** （只要源文件缺的东西不多，可以修复，小张抽空可以帮忙弄一下）
+
+已转格式的词库在本仓库`Dict\已整理词库`下
 
 ## 示例
 

@@ -1,3 +1,9 @@
+**book文件夹**为[kajweb/dict](https://github.com/kajweb/dict)整理
+
+**已整理词库文件夹**中为已做过格式处理的文件，注意将词库重命名并放在`data/wordsnorote/wordbook.json`
+
+---
+
 #  JSON 格式说明
 
 以 CET4_3.json 第一个单词 cancel 为例
