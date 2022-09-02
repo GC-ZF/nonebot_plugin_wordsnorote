@@ -48,7 +48,7 @@ pip install nonebot_plugin_wordsnorote
 ```python
 nonebot.load_plugin("nonebot_plugin_wordsnorote")
 ```
-在`.evn`中配置参数说明
+在`.env`（如：`.env.dev`）中配置参数说明
 
 | config    | type | default | example        | usage                    |
 | --------- | ---- | ------- | -------------- | ------------------------ |
