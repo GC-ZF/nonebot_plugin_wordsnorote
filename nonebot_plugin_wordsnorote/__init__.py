@@ -1,4 +1,5 @@
 import nonebot
+import nonebot.plugin
 from nonebot import on_regex, get_driver
 from nonebot.typing import T_State
 from nonebot.adapters.onebot.v11 import GroupMessageEvent, Bot, Message, MessageEvent, MessageSegment
